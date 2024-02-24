@@ -3,11 +3,10 @@
 - name: run scap report
   ansible.builtin.command:
     oscap xccdf eval --profile {{ profile }} \
+    --fetch-remote-resources \
     --results-arf /tmp/openscap/{{ dir_name }}_results/arf.xml \
     --report /tmp/openscap/{{ dir_name }}_results/{{ hostname }}_report.html \
     /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
-  args:
-    executable: /bin/bash
   register: oscap_result
   become: true
 
