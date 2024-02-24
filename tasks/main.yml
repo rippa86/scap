@@ -4,6 +4,7 @@
     var: dir_name
 - ansible.builtin.debug:
     var: hostname
+    
 - name: run scap report
   ansible.builtin.shell:
     oscap xccdf eval --profile {{ profile }} \
