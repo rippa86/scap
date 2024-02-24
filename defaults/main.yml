@@ -1,5 +1,5 @@
 ---
 # defaults file for scap
 dir_name: folder
-hostname: hostname
+oscap_hostname: hostname
 profile: xccdf_org.ssgproject.content_profile_e8
