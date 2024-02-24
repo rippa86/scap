@@ -1,0 +1,4 @@
+---
+# defaults file for scap
+datetime: folder
+hostname: hostname
