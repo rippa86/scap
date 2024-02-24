@@ -4,8 +4,8 @@
       ansible.builtin.command:
       cmd: >
         oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_e8 \
-        --results-arf /tmp/openscap/{{ datetime }}_results/arf.xml \
-        --report /tmp/openscap/{{ datetime }}_results/{{ hostname }}_report.html \
+        --results-arf /tmp/openscap/{{ dir_name }}_results/arf.xml \
+        --report /tmp/openscap/{{ dir_name }}_results/{{ hostname }}_report.html \
         /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
       args:
         executable: /bin/bash
