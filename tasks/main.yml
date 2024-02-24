@@ -15,6 +15,6 @@
   register: oscap_result
   become: true
 
-- name: dubug result d
+- name: dubug result da
   ansible.builtin.debug:
     var: oscap_result
