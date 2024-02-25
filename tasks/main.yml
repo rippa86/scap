@@ -12,6 +12,7 @@
     --results-arf /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}_arf.xml \
     --report /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}.html \
     /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
+  ignore_errors: true
   register: oscap_result
   become: true
 
