@@ -9,7 +9,7 @@
   ansible.builtin.shell:
     oscap xccdf eval --profile {{ profile }} \
     --fetch-remote-resources \
-    --results-arf /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}_arf.xml \
+    --results-arf /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}.xml \
     --report /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}.html \
     {{ scap_content }}
   ignore_errors: true
