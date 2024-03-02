@@ -21,7 +21,7 @@
 - name: Generate Fix
   ansible.builtin.shell:
     oscap xccdf generate fix --profile xccdf_org.ssgproject.content_profile_e8 \
-    --fetch-remote-resources {{ oscap_hostname }}_arf.xml > {{ oscap_hostname }}_fix.sh
+    --fetch-remote-resources {{ oscap_hostname }}.xml > {{ oscap_hostname }}_fix.sh
   args:
       chdir: "{{ change_dir }}"
   ignore_errors: true
