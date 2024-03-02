@@ -3,3 +3,6 @@
 dir_name: folder
 oscap_hostname: hostname
 profile: xccdf_org.ssgproject.content_profile_e8
+scap_content: /usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml
+report: true
+change_dir: /home/rippa/
