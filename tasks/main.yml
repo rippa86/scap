@@ -9,21 +9,20 @@
   ansible.builtin.shell:
     oscap xccdf eval --profile {{ profile }} \
     --fetch-remote-resources \
-    --results-arf /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}.xml \
-    --report /tmp/openscap/{{ dir_name }}_results/{{ oscap_hostname }}.html \
+    --results-arf {{ results_directory }}/{{ date }}.xml \
+    --report {{ results_directory }}/{{ date }}.html \
     {{ scap_content }}
   ignore_errors: true
   register: oscap_result
   become: true
   when: report
 
-
 - name: Generate Fix
   ansible.builtin.shell:
     oscap xccdf generate fix --profile xccdf_org.ssgproject.content_profile_e8 \
-    --fetch-remote-resources {{ oscap_hostname }}.xml > {{ oscap_hostname }}_fix.sh
+    --fetch-remote-resources {{ date }}.xml > {{ date }}_fix.sh
   args:
-      chdir: "{{ change_dir }}"
+      chdir: "{{ results_directory }}"
   ignore_errors: true
   register: oscap_result
   become: true
